@@ -1,3 +1,4 @@
+require 'ip_stack/error'
 require 'net/http'
 require 'resolv'
 
@@ -43,7 +44,12 @@ module IPStack
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: false) do |http|
         http.request(req)
       end
-      ActiveSupport::JSON.decode(res.body)
+      res = ActiveSupport::JSON.decode(res.body)
+      if res['success'] == false
+        raise IPStack::Error.from_code(res['error']['code'])
+      else
+        res
+      end
     end
   end
 end
