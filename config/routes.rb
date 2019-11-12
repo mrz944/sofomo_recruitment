@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  match '/geolocations/:name', to: 'geolocations#show', via: :get, constraints: { name: /.+/ }, as: :geolocation
+  match '/geolocations/:name', to: 'geolocations#destroy', via: :delete, constraints: { name: /.+/ }
+  resources :geolocations, only: :create
 end
