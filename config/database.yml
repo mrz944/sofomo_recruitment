@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  host: db
   database: sofomo_recruitment_production
-  username: sofomo_recruitment
-  password: <%= ENV['SOFOMO_RECRUITMENT_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: 
