@@ -26,6 +26,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # gem 'rack-cors'
 
 gem 'fast_jsonapi', '~> 1.0'
+gem 'rack-attack', '~> 6.0'
 gem 'whois', '~> 5.0'
 
 group :development, :test do
