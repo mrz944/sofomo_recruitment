@@ -16,16 +16,16 @@
 
         $ docker-compose up
 
-## Usage exapmples
+## Usage examples
 
-1. Add new or update existing record
+1. Add new or update existing record:
 
         $ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d ' {"name":"8.8.8.8"}' $(docker-machine ip):3000/geolocations
 
-2. Display record
+2. Display record:
 
-        $ curl -H "Accept: application/json" -H "Content-type: application/json" $(docker-machine ip):3000/geolocations/8.8.8.8
+        $ curl -H "Accept: application/json" -H "Content-type: application/json" $(docker-machine ip):3000/geolocations/sofomo.com
 
-2. Delete record
+2. Delete record:
 
         $ curl -H "Accept: application/json" -H "Content-type: application/json" -X DELETE $(docker-machine ip):3000/geolocations/8.8.8.8
