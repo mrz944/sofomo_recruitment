@@ -37,6 +37,6 @@ module SofomoRecruitment
 
     config.autoload_paths += %W( lib/ )
 
-    Rails.application.config.middleware.insert_before ActiveRecord::Migration::CheckPending, PG::CheckConnection
+    Rails.application.config.middleware.insert_before Rack::Head, PG::CheckConnection
   end
 end
